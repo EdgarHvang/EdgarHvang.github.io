@@ -1,0 +1,20 @@
+p{
+    color: darkblue;
+    font-size: large;
+    /* background-color: #b1a67b; */
+    align-content: center;
+}
+
+#myName{
+    color: rgb(87, 87, 19);
+    font-size: x-large;
+    font-style: italic;
+    font-weight: 200;
+    background-color: rgb(243, 245, 238);
+}
+
+
+
+body{
+    background-color: rgb(243, 245, 238);
+}
