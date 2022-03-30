@@ -9,11 +9,32 @@ a:hover{
 h2::first-letter{
     font-weight: bold;
     font-size: 1.5em;
+    transform: rotate(0.5turn);
+}
+
+p#dropcaps{
+    transform: rotateX(180deg)
 }
 
 .yellow-color {
     color: rgb(236, 231, 143);
 }
+
+div.movieout p.detail-sub{
+    padding-inline-start: 40px;
+    color: white;
+}
+
+div.movieout{
+    color: rgb(236, 231, 143);
+}
+
+div > p{
+    color: rgb(236, 231, 143);
+
+}
+
+
 
 .sunShinebeach{
     font-weight: bold;
@@ -45,6 +66,7 @@ h2{
     color: rgb(28, 166, 238);
     text-align:left ;
 }
+
 
 body{
     background-color: rgb(89, 86, 72);
