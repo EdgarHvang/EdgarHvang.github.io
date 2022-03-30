@@ -1,3 +1,15 @@
+a {
+    text-decoration: none ;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+h2::first-letter{
+    font-weight: bold;
+    font-size: 1.5em;
+}
 
 .yellow-color {
     color: rgb(236, 231, 143);
@@ -45,13 +57,19 @@ p{
     text-align: left;
 }
 
+
 a{
-    color: red;
+    color: rgb(28, 166, 238);
 
 }
 
 ul{
     color: white;
+}
+
+a > p{
+    color: rgb(28, 166, 238);
+
 }
 
 ol{
