@@ -1,0 +1,142 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+title {
+	color: rgb(57, 79, 80);
+}
+
+.header {
+	grid-area: header;
+	background-image: url("../resources/huntington.jpeg");
+	text-align: center;
+	padding: 60px;
+}
+
+.header>h1,
+h2 {
+	color: white;
+	text-align: center;
+}
+
+header .logo {
+	display: flex;
+	flex-basis: 70%;
+	padding: 50px 150px;
+}
+
+header .logo img {
+	height: 50;
+	width: 50;
+	padding: 30, 100, 30;
+}
+
+.main {
+	grid-area: main;
+	text-align: left;
+}
+
+.aside {
+	grid-area: right;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.footer {
+	grid-area: footer;
+	background-image: url("../resources/huntington.jpeg");
+	text-align: left;
+	padding: 60px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-areas:
+		'header header header header header header'
+		'main main main main right right'
+		'footer footer footer footer footer footer';
+	gap: 5px;
+	background-color: white;
+	padding: 5px;
+}
+
+.grid-container>div {
+	background-color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	padding: 20px 0;
+	font-size: 30px;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+}
+
+.participation {
+	background-color: rgb(200, 219, 206);
+}
+
+main>div {
+	padding: 10px 10px;
+	margin: 0;
+}
+
+.requirements {
+	background-color: rgb(200, 219, 206);
+}
+
+.aside {
+	margin: 0px;
+	padding: 60, 0, 60, 0;
+	background-color: rgb(73, 150, 143);
+
+}
+
+.aside ul {
+	padding: 25px 0px;
+	border-bottom: 0px solid rgb(4, 40, 38);
+}
+
+.aside ul>li a.design-name {
+	display: block;
+	color: rgb(250, 17, 17);
+
+}
+
+.aside > nav{
+	background-color: rgb(73, 150, 143);
+
+}
+
+.aside ul>li a.designer-name {
+	color: rgb(112, 13, 226);
+
+}
+
+.preamble {
+	clear: right;
+	padding: 0px 10px 0 10px;
+}
+
+.supporting {
+	padding-left: 10px;
+	margin-bottom: 40px;
+}
+
+.main > div > p > a {
+    text-decoration: none ;
+}
+
+.main > div > p > a:hover{
+    text-decoration: underline;
+}
+
+.navigation > ul > li > a{
+    text-decoration: none ;
+}
+
+.navigation > ul > li > a:hover{
+	background-color: rgb(6, 12, 10);
+}
