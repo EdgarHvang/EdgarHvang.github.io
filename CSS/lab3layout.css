@@ -20,18 +20,6 @@ h2 {
 	text-align: center;
 }
 
-header .logo {
-	display: flex;
-	flex-basis: 70%;
-	padding: 50px 150px;
-}
-
-header .logo img {
-	height: 50;
-	width: 50;
-	padding: 30, 100, 30;
-}
-
 .main {
 	grid-area: main;
 	text-align: left;
@@ -42,6 +30,7 @@ header .logo img {
 	display: flex;
 	flex-direction: column;
 	text-align: left;
+	padding: 120px;
 }
 
 .footer {
@@ -105,7 +94,7 @@ main>div {
 
 }
 
-.aside > nav{
+.aside>nav {
 	background-color: rgb(73, 150, 143);
 
 }
@@ -125,18 +114,16 @@ main>div {
 	margin-bottom: 40px;
 }
 
-.main > div > p > a {
-    text-decoration: none ;
+.main>div>p>a {
+	text-decoration: none;
 }
 
-.main > div > p > a:hover{
-    text-decoration: underline;
+.main>div>p>a:hover {
+	text-decoration: underline;
 }
 
-.navigation > ul > li > a{
-    text-decoration: none ;
-}
 
-.navigation > ul > li > a:hover{
-	background-color: rgb(6, 12, 10);
+nav li {
+	padding: 25px 0px;
+	border-bottom: 1px solid rgb(51, 227, 51);
 }
