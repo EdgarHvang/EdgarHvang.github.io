@@ -118,7 +118,7 @@ textarea {
 
 #bottompart {
     display: grid;
-    grid-template-areas: emptyleft middlecontent emptyright;
+    grid-template-areas: "emptyleft middlecontent emptyright";
     background-color: rgb(227, 227, 227);
     align-items: center;
 
