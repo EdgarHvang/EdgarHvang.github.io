@@ -46,9 +46,9 @@ h2 {
 		'header header header header header header'
 		'main main main main right right'
 		'footer footer footer footer footer footer';
-	gap: 5px;
+	gap: 0px;
 	background-color: white;
-	padding: 5px;
+	padding: 0px;
 }
 
 .grid-container>div {
@@ -69,7 +69,7 @@ header {
 
 main>div {
 	padding: 10px 10px;
-	margin: 0;
+	margin: 0px,50px;
 }
 
 .requirements {
@@ -116,6 +116,7 @@ main>div {
 
 .main>div>p>a {
 	text-decoration: none;
+	
 }
 
 .main>div>p>a:hover {

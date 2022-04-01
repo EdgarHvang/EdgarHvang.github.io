@@ -1,0 +1,147 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    /* width: 1000px; */
+}
+
+#toppart {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    background-color: rgb(162, 203, 188);
+    padding: auto;
+    align-items: center;
+}
+
+#toppart>h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-left: 50px;
+    color: rgb(140, 183, 194);
+}
+
+#toppart>p {
+    padding: 30px, 20px, ;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+#midsub1 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#midsub1>a {
+    width: 50%;
+    padding-bottom: 10px;
+
+}
+
+#midsub2 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#midsub2>a {
+    width: 50%;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+
+a {
+    color: black;
+}
+
+#midpart {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+
+.paymentcontainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.star {
+    color: red;
+}
+
+
+.emptyleft {
+    grid-area: empleft;
+}
+
+.emptyright {
+    grid-area: empright;
+}
+
+.middlecontent {
+    grid-area: middlecontent;
+}
+
+label {
+    display: flex;
+}
+
+label>input {
+    padding-left: 50px;
+}
+
+.unitcontrol {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+}
+
+.unitcontrol>label,
+p {
+    width: 50%;
+    margin-left: 30px;
+}
+
+
+
+.unitcontrol>input,
+select,
+textarea {
+    width: 50%;
+}
+
+.unitcontrol>div {
+    width: 50%;
+}
+
+#bottompart {
+    display: grid;
+    grid-template-areas: empleft middlecontent empright;
+    background-color: rgb(227, 227, 227);
+    align-items: center;
+
+}
+
+
+#bottompart input {
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    border-width: 0px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
+
+
+#submitbtn {
+    background-color: chartreuse;
+}
+
+#resetbtn {
+    background-color: cadetblue;
+}
