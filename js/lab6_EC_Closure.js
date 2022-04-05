@@ -120,19 +120,16 @@ printNumbers(1, 10);
 
 // after the loop
 // the alert going to show 100000000
-// I think it's because the sync code part execute before async code.
+// I think it's because the sync(for loop) code part execute before async(setTimeout) code
+
 
 let i = 0;
 
-a = (i) => {
-    for (let j = 0; j < 1999999990; j++) {
-        i++;
-    }
-    console.log('hello world')
-}
-
 setTimeout(() => {
-    console.log(5)
+    alert[i]
+
 }, 100);
 
-a(i);
+for(let j = 0; j < 100000000;j++){
+    i++;
+}
