@@ -316,66 +316,132 @@ let user = {
 
 
 
-function Node(element) {
-    this.element = element;
-    this.next = null;
-    //   console.log(":ssss");
+// function Node(element) {
+//     this.element = element;
+//     this.next = null;
+//     //   console.log(":ssss");
 
-}
+// }
 
-function Linkedlist() {
-    // console.log(":ssss");
-    this.head = null;
+// function Linkedlist() {
+//     // console.log(":ssss");
+//     this.head = null;
 
-}
+// }
 
-Linkedlist.prototype.find = function (aElement) {
-    let currNode = this.head;
-    while (!(currNode.next == null) && (currNode.next.element != aElement)) {
-        currNode = currNode.next;
+// Linkedlist.prototype.find = function (aElement) {
+//     let currNode = this.head;
+//     while (!(currNode.next == null) && (currNode.next.element != aElement)) {
+//         currNode = currNode.next;
+//     }
+//     return currNode;
+// }
+
+// Linkedlist.prototype.add = function (newElement) {
+//     let newNode = new Node(newElement);
+
+//     if (this.head == null) {
+//         this.head = newNode;
+//     } else {
+//         let cur = this.head;
+//         while (cur.next != null) {
+//             cur = cur.next;
+//         }
+//         cur.next = newNode;
+//     }
+
+
+// }
+
+// Linkedlist.prototype.remove = function (aElement) {
+//     let preNode = this.find(aElement);
+//     if (!(preNode.next == null)) {
+//         preNode.next = preNode.next.next;
+//     }
+// }
+
+// Linkedlist.prototype.print = function () {
+//     let result = 'LinkedList{';
+//     let node = this.head;
+//     while (node != null) {
+//         result += node.element + ",";
+//         node = node.next;
+//         console.log("xxx");
+//     }
+//     result += '}';
+//     console.log(result);
+
+// }
+
+
+// let linkedlist = new Linkedlist();
+// linkedlist.add(1);
+// linkedlist.add(2);
+// linkedlist.add(3);
+// linkedlist.print();
+// linkedlist.remove(2);
+// linkedlist.print();
+// console.log(linkedlist);
+
+//Class literal solution
+
+class Node {
+    constructor(element) {
+        this.element = element;
+        this.next = null;
     }
-    return currNode;
 }
 
-Linkedlist.prototype.add = function (newElement) {
-    let newNode = new Node(newElement);
+class LinkedList {
 
-    if (this.head == null) {
-        this.head = newNode;
-    } else {
-        let cur = this.head;
-        while (cur.next != null) {
-            cur = cur.next;
+    constructor(node) {
+        this.head = node;
+    }
+
+    add(newElement) {
+        let newNode = new Node(newElement);
+
+        if (this.head == null) {
+            this.head = newNode;
+        } else {
+            let cur = this.head;
+            while (cur.next != null) {
+                cur = cur.next;
+            }
+            cur.next = newNode;
         }
-        cur.next = newNode;
     }
 
+    find(aElement) {
+        let currNode = this.head;
+        while (!(currNode.next == null) && (currNode.next.element != aElement)) {
+            currNode = currNode.next;
+        }
+        return currNode;
+    }
+
+    remove(aElement) {
+        let preNode = this.find(aElement);
+        if (!(preNode.next == null)) {
+            preNode.next = preNode.next.next;
+        }
+    }
+
+    print() {
+        let result = 'LinkedList{';
+        let node = this.head;
+        while (node != null) {
+            result += node.element + ",";
+            node = node.next;
+            console.log("xxx");
+        }
+        result += '}';
+        console.log(result);
+    }
 
 }
 
-Linkedlist.prototype.remove = function (aElement) {
-    let preNode = this.find(aElement);
-    if (!(preNode.next == null)) {
-        preNode.next = preNode.next.next;
-    }
-}
-
-Linkedlist.prototype.print = function () {
-    let result = 'LinkedList{';
-    let node = this.head;
-    // result = this.printHelper(this, result);
-    while (node != null) {
-        result += node.element + ",";
-        node = node.next;
-        console.log("xxx");
-    }
-    result += '}';
-    console.log(result);
-
-}
-
-
-let linkedlist = new Linkedlist();
+let linkedlist = new LinkedList();
 linkedlist.add(1);
 linkedlist.add(2);
 linkedlist.add(3);
