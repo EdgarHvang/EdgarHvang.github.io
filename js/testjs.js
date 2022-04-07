@@ -433,7 +433,7 @@ class LinkedList {
         while (node != null) {
             result += node.element + ",";
             node = node.next;
-            console.log("xxx");
+            // console.log("xxx");
         }
         result += '}';
         console.log(result);
