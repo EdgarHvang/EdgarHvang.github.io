@@ -361,17 +361,25 @@ Linkedlist.prototype.remove = function (aElement) {
 }
 
 Linkedlist.prototype.print = function () {
+    let result = 'LinkedList{';
     let node = this.head;
-    while (node.next != null) {
-        console.log(node.element);
+    // result = this.printHelper(this, result);
+    while (node != null) {
+        result += node.element + ",";
         node = node.next;
+        console.log("xxx");
     }
+    result += '}';
+    console.log(result);
+
 }
+
 
 let linkedlist = new Linkedlist();
 linkedlist.add(1);
 linkedlist.add(2);
 linkedlist.add(3);
+linkedlist.print();
 linkedlist.remove(2);
 linkedlist.print();
 console.log(linkedlist);

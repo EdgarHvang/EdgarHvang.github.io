@@ -144,13 +144,19 @@ testArray.sort();
  * linkedlist.print() expect result:Linkedlist{1,3}
  */
 
-function Node(element) {
+
+
+ function Node(element) {
     this.element = element;
     this.next = null;
+    //   console.log(":ssss");
+
 }
 
 function Linkedlist() {
+    // console.log(":ssss");
     this.head = null;
+
 }
 
 Linkedlist.prototype.find = function (aElement) {
@@ -185,17 +191,24 @@ Linkedlist.prototype.remove = function (aElement) {
 }
 
 Linkedlist.prototype.print = function () {
+    let result = 'LinkedList{';
     let node = this.head;
-    while (node.next != null) {
-        console.log(node.element);
+    while (node != null) {
+        result += node.element + ",";
         node = node.next;
+        console.log("xxx");
     }
+    result += '}';
+    console.log(result);
+
 }
+
 
 let linkedlist = new Linkedlist();
 linkedlist.add(1);
 linkedlist.add(2);
 linkedlist.add(3);
+linkedlist.print();
 linkedlist.remove(2);
 linkedlist.print();
 console.log(linkedlist);
