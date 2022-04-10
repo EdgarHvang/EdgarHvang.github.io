@@ -67,23 +67,23 @@
 
 
 
-function askPassword(ok, fail) {
-    let password = prompt("password", "");
-    if (password == "rockstar") ok();
-    else fail();
-}
+// function askPassword(ok, fail) {
+//     let password = prompt("password", "");
+//     if (password == "rockstar") ok();
+//     else fail();
+// }
 
-let user = {
-    name: "john",
+// let user = {
+//     name: "john",
 
-    loginOk() {
-        alert(`${this.name} logged in`)
-    },
+//     loginOk() {
+//         alert(`${this.name} logged in`)
+//     },
 
-    loginFail() {
-        alert(`${this.name} failed to log in`)
-    },
-}
+//     loginFail() {
+//         alert(`${this.name} failed to log in`)
+//     },
+// }
 
 // askPassword(user.loginOk,user.loginFail);
 // this.askPassword(this.user.loginOk,this.user.loginFail)
@@ -226,6 +226,8 @@ let user = {
 //     return student.computeAverageGrade()/students.length;
 // }).reduce((a,b)=>(a + b),0)
 // console.log("all students :" + avgGradesAll)
+
+// student.reduce((a,b)=>{(a + b),0})
 
 /**
  * Question 2
@@ -385,67 +387,169 @@ let user = {
 
 //Class literal solution
 
-class Node {
-    constructor(element) {
-        this.element = element;
-        this.next = null;
+// class Node {
+//     constructor(element) {
+//         this.element = element;
+//         this.next = null;
+//     }
+// }
+
+// class LinkedList {
+
+//     constructor(node) {
+//         this.head = node;
+//     }
+
+//     add(newElement) {
+//         let newNode = new Node(newElement);
+
+//         if (this.head == null) {
+//             this.head = newNode;
+//         } else {
+//             let cur = this.head;
+//             while (cur.next != null) {
+//                 cur = cur.next;
+//             }
+//             cur.next = newNode;
+//         }
+//     }
+
+//     find(aElement) {
+//         let currNode = this.head;
+//         while (!(currNode.next == null) && (currNode.next.element != aElement)) {
+//             currNode = currNode.next;
+//         }
+//         return currNode;
+//     }
+
+//     remove(aElement) {
+//         let preNode = this.find(aElement);
+//         if (!(preNode.next == null)) {
+//             preNode.next = preNode.next.next;
+//         }
+//     }
+
+//     print() {
+//         let result = 'LinkedList{';
+//         let node = this.head;
+//         while (node != null) {
+//             result += node.element + ",";
+//             node = node.next;
+//             // console.log("xxx");
+//         }
+//         result += '}';
+//         console.log(result);
+//     }
+
+// }
+
+// let linkedlist = new LinkedList();
+// linkedlist.add(1);
+// linkedlist.add(2);
+// linkedlist.add(3);
+// linkedlist.print();
+// linkedlist.remove(2);
+// linkedlist.print();
+// console.log(linkedlist);
+
+// const user = {
+//     username:
+//         "franky",
+//     email: 'franky@frankyrocks.io',
+//     // Get data with arrow function
+//     getUserWithArrowFunction: () => {
+//         // This refers to global object, window
+//         // So, this. username is like window. username
+//         return `${this.username} ${this. email}`
+//     },
+
+//     // Get data with normal function
+//     getUserWithNormalFunction: function() {
+//     // This refers to user
+//     // So, this. username is like user. username
+//     return `${this.username} ${this. email}`
+//     }
+
+// }
+
+
+// // Test the arrow function
+// console.log(user.getUserWithArrowFunction())
+// // undefined, undefined.
+// // I Test the normal function
+// console.log(user.getUserWithNormalFunction())
+
+class Question {
+    constructor(id, answer) {
+        this.id = id;
+        this.answer = answer;
+    }
+    checkAnswer(rightAnswer) {
+        return this.answer === rightAnswer;
     }
 }
 
-class LinkedList {
 
-    constructor(node) {
-        this.head = node;
+class Student {
+    constructor(studentId, answers = []) {
+        this.studentId = studentId;
+        this.answers = answers;
+    }
+    addAnswer(question) {
+        this.answers.push(question);
+    }
+}
+
+
+class Quiz {
+    constructor(questionsArray = [], students = []) {
+        this.questions = new Map();
+        questionsArray.forEach(q => {
+            this.questions.set(q.id, q.answer);
+        });
+        this.students = students;
     }
 
-    add(newElement) {
-        let newNode = new Node(newElement);
+    scoreStudent(studentId) {
+        let studentarr = this.students.filter((st) => {
+            return st.studentId === studentId;
+        })
+        let student = studentarr[0];
+        console.log(student);
 
-        if (this.head == null) {
-            this.head = newNode;
-        } else {
-            let cur = this.head;
-            while (cur.next != null) {
-                cur = cur.next;
+        return student.answers.reduce((mk, curQuestion) => {
+            let quesid = curQuestion.id;
+            let correctAnswer = this.questions.get(quesid);
+            if (curQuestion.checkAnswer(correctAnswer)) {
+                mk += 1;
             }
-            cur.next = newNode;
-        }
+            return mk;
+        }, 0);
+
     }
 
-    find(aElement) {
-        let currNode = this.head;
-        while (!(currNode.next == null) && (currNode.next.element != aElement)) {
-            currNode = currNode.next;
-        }
-        return currNode;
-    }
+    getAverageScore() {
 
-    remove(aElement) {
-        let preNode = this.find(aElement);
-        if (!(preNode.next == null)) {
-            preNode.next = preNode.next.next;
-        }
-    }
+        return this.students.reduce((avg, curStudent, index, array) => 
+            avg + this.scoreStudent(curStudent.studentId) / array.length
+        , 0);
 
-    print() {
-        let result = 'LinkedList{';
-        let node = this.head;
-        while (node != null) {
-            result += node.element + ",";
-            node = node.next;
-            // console.log("xxx");
-        }
-        result += '}';
-        console.log(result);
+
     }
 
 }
 
-let linkedlist = new LinkedList();
-linkedlist.add(1);
-linkedlist.add(2);
-linkedlist.add(3);
-linkedlist.print();
-linkedlist.remove(2);
-linkedlist.print();
-console.log(linkedlist);
+const questionsArraywithCorrectAnswers = [new Question(1, 'a'), new Question(2, 'b'), new Question(3, 'd')];
+
+let student1 = new Student(1001, [new Question(1, 'b'), new Question(2, 'b'), new
+    Question(3, 'b')]);
+
+let student2 = new Student(1002);
+student2.addAnswer(new Question(1, 'a'));
+student2.addAnswer(new Question(2, 'b'));
+student2.addAnswer(new Question(3, 'd'));
+const students = [student1, student2];
+let quizObj = new Quiz(questionsArraywithCorrectAnswers, students);
+console.log(quizObj.scoreStudent(1001));
+console.log(quizObj.scoreStudent(1002));
+console.log(quizObj.getAverageScore());
