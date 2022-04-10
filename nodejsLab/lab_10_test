@@ -18,6 +18,7 @@ console.log(sorts.odd());
 //setImmediate is the check phase
 
 //Question3 Does Node.js has window object?
+
 //Node.js has no window object but Node.js provide global module and methods that are automatically
 //created for us.
 
