@@ -1,0 +1,23 @@
+let Sorterx = require("./lab_10_arraySorter");
+console.log(Sorterx);
+let arr = [1,2,3,4,5,6,7,8];
+let sorts = new Sorterx(arr);
+console.log(sorts.even());
+console.log(sorts.odd());
+
+
+//Question1 Explain why do we want sometimes to use setImmediate instead of using setTimeout?
+
+// setTimeout is in the timer phase of the eventloop
+// setImmediate is run in the check phase
+
+
+//Question2 Explain the difference between process.nextTick and setImmediate?
+
+//process.nextTick create a whole different call stack has higher priority than the setImmediate 
+//setImmediate is the check phase
+
+//Question3 Does Node.js has window object?
+//Node.js has no window object but Node.js provide global module and methods that are automatically
+//created for us.
+
