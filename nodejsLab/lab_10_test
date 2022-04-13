@@ -22,3 +22,7 @@ console.log(sorts.odd());
 //Node.js has no window object but Node.js provide global module and methods that are automatically
 //created for us.
 
+console.log(__filename);
+console.log(__dirname);
+console.log(module);
+
