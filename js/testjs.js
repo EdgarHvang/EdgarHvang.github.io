@@ -479,77 +479,83 @@
 // // I Test the normal function
 // console.log(user.getUserWithNormalFunction())
 
-class Question {
-    constructor(id, answer) {
-        this.id = id;
-        this.answer = answer;
-    }
-    checkAnswer(rightAnswer) {
-        return this.answer === rightAnswer;
-    }
+// class Question {
+//     constructor(id, answer) {
+//         this.id = id;
+//         this.answer = answer;
+//     }
+//     checkAnswer(rightAnswer) {
+//         return this.answer === rightAnswer;
+//     }
+// }
+
+
+// class Student {
+//     constructor(studentId, answers = []) {
+//         this.studentId = studentId;
+//         this.answers = answers;
+//     }
+//     addAnswer(question) {
+//         this.answers.push(question);
+//     }
+// }
+
+
+// class Quiz {
+//     constructor(questionsArray = [], students = []) {
+//         this.questions = new Map();
+//         questionsArray.forEach(q => {
+//             this.questions.set(q.id, q.answer);
+//         });
+//         this.students = students;
+//     }
+
+//     scoreStudent(studentId) {
+//         let studentarr = this.students.filter((st) => {
+//             return st.studentId === studentId;
+//         })
+//         let student = studentarr[0];
+//         console.log(student);
+
+//         return student.answers.reduce((mk, curQuestion) => {
+//             let quesid = curQuestion.id;
+//             let correctAnswer = this.questions.get(quesid);
+//             if (curQuestion.checkAnswer(correctAnswer)) {
+//                 mk += 1;
+//             }
+//             return mk;
+//         }, 0);
+
+//     }
+
+//     getAverageScore() {
+
+//         return this.students.reduce((avg, curStudent, index, array) => 
+//             avg + this.scoreStudent(curStudent.studentId) / array.length
+//         , 0);
+
+
+//     }
+
+// }
+
+// const questionsArraywithCorrectAnswers = [new Question(1, 'a'), new Question(2, 'b'), new Question(3, 'd')];
+
+// let student1 = new Student(1001, [new Question(1, 'b'), new Question(2, 'b'), new
+//     Question(3, 'b')]);
+
+// let student2 = new Student(1002);
+// student2.addAnswer(new Question(1, 'a'));
+// student2.addAnswer(new Question(2, 'b'));
+// student2.addAnswer(new Question(3, 'd'));
+// const students = [student1, student2];
+// let quizObj = new Quiz(questionsArraywithCorrectAnswers, students);
+// console.log(quizObj.scoreStudent(1001));
+// console.log(quizObj.scoreStudent(1002));
+// console.log(quizObj.getAverageScore());
+
+async function foo(){
+    return "hi";
 }
 
-
-class Student {
-    constructor(studentId, answers = []) {
-        this.studentId = studentId;
-        this.answers = answers;
-    }
-    addAnswer(question) {
-        this.answers.push(question);
-    }
-}
-
-
-class Quiz {
-    constructor(questionsArray = [], students = []) {
-        this.questions = new Map();
-        questionsArray.forEach(q => {
-            this.questions.set(q.id, q.answer);
-        });
-        this.students = students;
-    }
-
-    scoreStudent(studentId) {
-        let studentarr = this.students.filter((st) => {
-            return st.studentId === studentId;
-        })
-        let student = studentarr[0];
-        console.log(student);
-
-        return student.answers.reduce((mk, curQuestion) => {
-            let quesid = curQuestion.id;
-            let correctAnswer = this.questions.get(quesid);
-            if (curQuestion.checkAnswer(correctAnswer)) {
-                mk += 1;
-            }
-            return mk;
-        }, 0);
-
-    }
-
-    getAverageScore() {
-
-        return this.students.reduce((avg, curStudent, index, array) => 
-            avg + this.scoreStudent(curStudent.studentId) / array.length
-        , 0);
-
-
-    }
-
-}
-
-const questionsArraywithCorrectAnswers = [new Question(1, 'a'), new Question(2, 'b'), new Question(3, 'd')];
-
-let student1 = new Student(1001, [new Question(1, 'b'), new Question(2, 'b'), new
-    Question(3, 'b')]);
-
-let student2 = new Student(1002);
-student2.addAnswer(new Question(1, 'a'));
-student2.addAnswer(new Question(2, 'b'));
-student2.addAnswer(new Question(3, 'd'));
-const students = [student1, student2];
-let quizObj = new Quiz(questionsArraywithCorrectAnswers, students);
-console.log(quizObj.scoreStudent(1001));
-console.log(quizObj.scoreStudent(1002));
-console.log(quizObj.getAverageScore());
+console.log(foo());
