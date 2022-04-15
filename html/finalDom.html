@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <script>
+
+       //write code here
+        window.onload = function(){
+           let l1 = document.getElementById('n1');
+           let l2 = document.getElementById('n2');
+           let btn = document.getElementById('n3');
+
+           btn.addEventListener('click',function(){
+            temp = l1.value;
+            l1.value = l2.value;
+            l2.value = temp;
+           })
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <input id="n1" name="num1" />
+
+    <input id="n2" name="num2" />
+
+    <button id="n3">SWAP</button>
+
+</body>
+
+</html>
