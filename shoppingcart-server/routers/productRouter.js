@@ -13,7 +13,9 @@ router.post('/',productController.save) //add new product
 
 router.put('/',productController.update) //update product info,search productid first
 
-router.delete('/',productController.deleteById) //delete product by productId id is number but in server it's treat as string
+router.delete('/:productId',productController.deleteById) //delete product by productId id is number but in server it's treat as string
+
+router.get('/books',productController.getBook); //return the book by the author
 
 
 module.exports = router;

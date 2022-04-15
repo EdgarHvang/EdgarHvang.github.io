@@ -8,7 +8,6 @@ module.exports = class Product {
         this.ISBN = ISBN;
         this.publishDate = publishDate;
         this.author = author;
-
     }
 
     save() {
@@ -53,11 +52,20 @@ module.exports = class Product {
         console.log(index);
         if (index != -1) {
             console.log("--------");
-            products = products.filter(p=> p.id !== productId);
+            products = products.filter(p=> p.id != productId);
         } else {
             throw new Error('NOT Found');
         }
         console.log(products);
+    }
+
+    static getBookByAuthor(firstName){
+       let index = products.find(p=>p.author.firstName === firstName);
+       if(index != -1){
+        
+       }else{
+
+       }
     }
 
 }
