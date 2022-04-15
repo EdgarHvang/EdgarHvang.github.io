@@ -113,18 +113,8 @@ async function addProduct() {
 async function setDefaultData(){
     let result = await fetch('http://localhost:4000/products/defaultData', {
         method: 'POST',
-        headers: {
-            'Content-type': 'application/json',
-        },
-        body: JSON.stringify({
-            title: document.getElementById('title').value,
-            ISBN: document.getElementById('isbn').value,
-            publishDate: document.getElementById('publishDate').value,
-            author: document.getElementById('author').value
-        })
     }).then(res => res.json());
     result.forEach(prod => renderProduct(prod));
-    // renderProduct(result);
 }
 
 function editProduct() {
