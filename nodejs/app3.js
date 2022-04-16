@@ -6,3 +6,5 @@ console.log(pe);
 pe.getName();
 const pes = require("./pattern3");
 console.log(pes);
+
+require('./another')
