@@ -60,11 +60,12 @@ module.exports = class Product {
     }
 
     static getBookByAuthor(firstName){
+        console.log("xxx")
        let index = products.find(p=>p.author.firstName === firstName);
        if(index != -1){
-        
+        return products.filter(p=>p.author.firstName === firstName)[0];
        }else{
-
+        throw new Error('NOT Found');
        }
     }
 

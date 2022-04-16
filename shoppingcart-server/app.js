@@ -23,7 +23,6 @@ app.use((error,req,res,next)=>{
     }
 })
 
-
 app.set('port', process.env.PORT || 4000);
 console.log('listening to', app.get('port'))
 app.listen(4000);
