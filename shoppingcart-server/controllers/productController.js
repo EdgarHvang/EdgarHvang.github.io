@@ -1,16 +1,16 @@
 const { fectchAll } = require('../models/product');
 const Product = require('../models/product');
-const Author = require('../models/author');
+// const Author = require('../models/author');
 
 
 exports.setDefault = (req, res, next) => {
 
-    let author1 = new Author(11, "jk simons", "Oriely");
-    let author2 = new Author(12, "edgar", "trump");
-    let author3 = new Author(13, "mike", "Huang");
-    let p1 = new Product(100, 'Harry Potter', '978-3-16-148410-0', '2022-01-02', author1).save();
-    let p2 = new Product(101, 'Jurassic Park', '978-3-16-148410-1', '2012-01-02', author2).save();
-    let p3 = new Product(102, 'Game of Throne', '978-3-16-149410-5', '2001-01-02', author3).save();
+    // let author1 = new Author(11, "jk simons", "Oriely");
+    // let author2 = new Author(12, "edgar", "trump");
+    // let author3 = new Author(13, "mike", "Huang");
+    let p1 = new Product(100, 'Harry Potter', '978-3-16-148410-0', '2022-01-02', "jk simons").save();
+    let p2 = new Product(101, 'Jurassic Park', '978-3-16-148410-1', '2012-01-02', "edgar").save();
+    let p3 = new Product(102, 'Game of Throne', '978-3-16-149410-5', '2001-01-02', "mike").save();
 
     res.status(200).json(Product.fectchAll())
 }
